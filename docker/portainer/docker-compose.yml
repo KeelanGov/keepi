@@ -1,0 +1,22 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    restart: always
+    ports:
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    environment:
+      - TRUSTED_ORIGINS=portainer.keepi
+    networks:
+      - homelab
+
+volumes:
+  portainer_data:
+    external: true
+
+networks:
+  homelab:
+    external: true

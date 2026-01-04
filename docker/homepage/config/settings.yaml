@@ -1,0 +1,10 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+background: https://wallpapers-clan.com/wp-content/uploads/2024/12/wazowski-windows-desktop-wallpaper-4k-preview.jpg 
+iconStyle: theme
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

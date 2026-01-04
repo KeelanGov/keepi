@@ -1,0 +1,20 @@
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: long
+      timeStyle: short
+
+- openmeteo:
+    label: Cape Town
+    latitude: -33.9249
+    longitude: 18.4241
+    cache: 5
+    units: metric
+
+- resources:
+    # cpu: true
+    # memory: true
+    disk: /
+    cputemp: true
+    uptime: true
+    network: true

@@ -1,0 +1,25 @@
+services:
+  healthchecks:
+    container_name: healthchecks
+    image: healthchecks/healthchecks:latest
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./data:/data
+    environment:
+      - ALLOWED_HOSTS=*
+      - SECRET_KEY=YOUR_SECRET_KEY_HERE
+      - DEBUG=False
+      - DEFAULT_FROM_EMAIL=healthchecks@keepi.local
+      - SITE_ROOT=http://healthchecks.keepi
+      - SITE_NAME=Keepi Healthchecks
+      - TZ=Africa/Johannesburg
+      - DB=sqlite
+      - DB_NAME=/data/hc.sqlite
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

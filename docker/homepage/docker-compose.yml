@@ -1,0 +1,19 @@
+services:
+  homepage:
+    container_name: homepage
+    image: ghcr.io/gethomepage/homepage:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      TZ: Africa/Johannesburg
+      HOMEPAGE_ALLOWED_HOSTS: keepi.local:3000,dash.keepi,192.168.0.9:3000,100.92.164.90:3000
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

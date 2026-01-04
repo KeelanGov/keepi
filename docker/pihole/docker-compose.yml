@@ -1,0 +1,25 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TZ: 'Africa/Johannesburg'
+      PIHOLE_DNS_: '127.0.0.1#5335'
+      WEB_PORT: 8080
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+
+  unbound:
+    container_name: unbound
+    image: klutchell/unbound:latest
+    restart: unless-stopped
+    ports:
+      - "5335:53/udp"
+      - "5335:53/tcp"
+
+networks:
+  homelab:
+    external: true

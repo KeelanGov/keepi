@@ -1,0 +1,30 @@
+# Homepage Widget Configuration for PEC Utilities
+# Add this to your ~/docker/homepage/config/services.yaml
+
+# Option 1: Custom API Widget (shows key metrics)
+- Utilities:
+    - PEC Utilities:
+        icon: si-lightning
+        href: https://portals.pecutilities.co.za
+        description: Electricity & Water
+        widget:
+          type: customapi
+          url: http://pec-utilities:5000/api/widget/homepage
+          mappings:
+            - field: 0.value
+              label: Balance
+            - field: 1.value
+              label: Energy Today
+            - field: 2.value
+              label: Water Today
+            - field: 3.value
+              label: Updated
+
+# Option 2: Simple iframe approach (if you want more detail)
+# - Utilities:
+#     - PEC Dashboard:
+#         icon: si-lightning
+#         href: http://pec.keepi
+#         widget:
+#           type: iframe
+#           src: http://pec-utilities:5000/api/current

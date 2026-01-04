@@ -1,0 +1,18 @@
+services:
+  whatsupdocker:
+    container_name: whatsupdocker
+    image: fmartinou/whats-up-docker:latest
+    restart: unless-stopped
+    ports:
+      - '3002:3000'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./data:/store
+    environment:
+      - TZ=Africa/Johannesburg
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

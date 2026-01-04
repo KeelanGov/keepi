@@ -1,0 +1,40 @@
+---
+- Network:
+    - Router Admin:
+        - abbr: RT
+          href: http://192.168.0.1
+          icon: mdi-router-wireless
+    - Public IP:
+        - abbr: IP
+          href: https://ifconfig.me
+          icon: mdi-earth
+    - DNS Checker:
+        - abbr: DNS
+          href: https://dnschecker.org
+          icon: mdi-dns
+    - Down Detector SA:
+        - abbr: DD
+          href: https://downdetector.co.za
+          icon: mdi-alert-circle
+- South Africa:
+    - EskomSePush:
+        - abbr: ESP
+          href: https://esp.info
+          icon: mdi-flash-off
+    - Eskom Status:
+        - abbr: ESK
+          href: https://loadshedding.eskom.co.za
+          icon: mdi-lightning-bolt
+    - WebAfrica Status:
+        - abbr: WA
+          href: https://www.webafrica.co.za/network/
+          icon: mdi-web
+- Greenbay:
+    - Balwin App:
+        - abbr: BA
+          href: https://balwin.web.app
+          icon: mdi-home-city-outline
+    - PEC Portal:
+        - abbr: PEC
+          href: https://portals.pecutilities.co.za
+          icon: mdi-lightning-bolt

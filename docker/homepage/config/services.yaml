@@ -1,0 +1,88 @@
+- Infrastructure:
+    - Pi-hole:
+        icon: pi-hole.png
+        href: http://pihole.keepi/admin
+        description: DNS & Ad Blocking
+        widget:
+          type: pihole
+          url: http://192.168.0.9:8080
+          version: 6
+          key: YOUR_PIHOLE_API_KEY
+
+    - Portainer:
+        icon: portainer.png
+        href: http://portainer.keepi
+        description: Container Management
+        widget:
+          type: portainer
+          url: https://192.168.0.9:9443
+          env: 3
+          key: YOUR_PORTAINER_API_KEY
+
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: http://uptime.keepi
+        description: Service Monitoring
+        widget:
+          type: uptimekuma
+          url: http://192.168.0.9:3001
+          slug: keepi
+
+    - Nginx Proxy:
+        icon: nginx-proxy-manager.png
+        href: http://proxy.keepi
+        description: Reverse Proxy
+
+- Monitoring:
+    - Speedtest Tracker:
+        icon: speedtest-tracker.png
+        href: http://speedtest.keepi
+        description: Internet speed monitoring
+        widget:
+          type: speedtest
+          url: http://192.168.0.9:8765
+
+    - System:
+        icon: glances.png
+        href: http://glances.keepi
+        description: System monitoring
+        widget:
+          type: glances
+          url: http://glances:61208
+          metric: info
+          version: 4
+
+    - What's Up Docker:
+        icon: whats-up-docker.png
+        href: http://wud.keepi
+        description: Container updates
+        widget:
+          type: whatsupdocker
+          url: http://192.168.0.9:3002
+
+    - Healthchecks:
+        icon: healthchecks.png
+        href: http://healthchecks.keepi
+        description: Cron job monitoring
+        widget:
+          type: healthchecks
+          url: http://192.168.0.9:8000
+          key: YOUR_HEALTHCHECKS_API_KEY
+
+- Utilities:
+    - PEC Utilities:
+        icon: mdi-lightning-bolt
+        href: http://pec.keepi:8050
+        description: Electricity & Water
+        widget:
+          type: customapi
+          url: http://pec-utilities:5000/api/widget/homepage
+          mappings:
+            - field: 0.value
+              label: Balance
+            - field: 1.value
+              label: Energy
+            - field: 2.value
+              label: Water
+            - field: 3.value
+              label: Updated

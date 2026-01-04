@@ -1,0 +1,23 @@
+services:
+  speedtest-tracker:
+    container_name: speedtest-tracker
+    image: linuxserver/speedtest-tracker:latest
+    restart: unless-stopped
+    ports:
+      - '8765:80'
+    volumes:
+      - ./data:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Africa/Johannesburg
+      - APP_KEY=YOUR_APP_KEY_HERE
+      - DB_CONNECTION=sqlite
+      - SPEEDTEST_SCHEDULE="0 */4 * * *"
+      - DISPLAY_TIMEZONE=Africa/Johannesburg
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

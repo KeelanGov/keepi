@@ -1,0 +1,18 @@
+# Sensitive files
+*.env
+.env*
+credentials.*
+secrets.*
+
+# Data directories (backed up separately)
+**/data/
+**/etc-pihole/
+**/etc-dnsmasq.d/
+**/letsencrypt/
+
+# Backups
+*.tar.gz
+backups/
+
+# OS files
+.DS_Store
